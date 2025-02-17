@@ -12,7 +12,8 @@ public class TestAjout extends TestCase {
 			plan.ajout(new Reservation(new DateCalendrier(30, 12, 1582), new PlageHoraire(new Horaire(8, 15), new Horaire(9, 30)), "test", "testNiveau"));
     	}
     	catch(ExceptionPlanning e){
-    		System.out.println(ConstantesErreur.ERREURS_PLANNING[e.getCodeErreur()]);
+			System.out.println("Erreur détectée");
+			assertEquals("Reservation invalide", ConstantesErreur.ERREURS_PLANNING[e.getCodeErreur()]);
     	}
 	}
 
@@ -20,7 +21,7 @@ public class TestAjout extends TestCase {
 		try{
 			PlanningCollections plan = new PlanningCollections();
 			plan.ajout(new Reservation(new DateCalendrier(30, 12, 2024), new PlageHoraire(new Horaire(8, 15), new Horaire(9, 30)), "test", "testNiveau"));
-			plan.ajout(new Reservation(new DateCalendrier(30, 12, 2024), new PlageHoraire(new Horaire(10, 15), new Horaire(11, 0)), "testBis", "testNiveauBis"));
+			plan.ajout(new Reservation(new DateCalendrier(30, 12, 2024), new PlageHoraire(new Horaire(10, 15), new Horaire(11, 45)), "testBis", "testNiveauBis"));
 		}
 		catch(ExceptionPlanning e){
     		System.out.println(ConstantesErreur.ERREURS_PLANNING[e.getCodeErreur()]);
@@ -34,7 +35,8 @@ public class TestAjout extends TestCase {
 			plan.ajout(new Reservation(new DateCalendrier(30, 12, 2024), new PlageHoraire(new Horaire(9, 15), new Horaire(11, 0)), "testBis", "testNiveauBis"));
 		}
 		catch(ExceptionPlanning e){
-    		System.out.println(ConstantesErreur.ERREURS_PLANNING[e.getCodeErreur()]);
+			System.out.println("Erreur détectée");
+			assertEquals("Reservation incompatible", ConstantesErreur.ERREURS_PLANNING[e.getCodeErreur()]);
     	}
     }
 }
