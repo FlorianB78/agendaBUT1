@@ -31,6 +31,6 @@ public class TestGetReservations extends TestCase {
     
 	public void testChSetVide() {
 		PlanningCollections plan = new PlanningCollections();
-		assertEquals(null, plan.getReservations(new DateCalendrier(29, 12, 2024)));
+        assertNull(plan.getReservations(new DateCalendrier(29, 12, 2024)));
     }
 }
