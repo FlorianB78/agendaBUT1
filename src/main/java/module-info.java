@@ -8,4 +8,5 @@ module com.example.deuxiemeprojet {
     exports modele;
     exports vue;
     exports controleur;
+    exports tests;
 }
